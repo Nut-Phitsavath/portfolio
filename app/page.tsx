@@ -202,8 +202,8 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  whileHover={{ y: -10, scale: 1.05 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  whileHover={{ y: -10, scale: 1.05, transition: { duration: 0.2 } }}
                   className="p-6 rounded-2xl glass hover:shadow-xl transition-all"
                 >
                   <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
@@ -239,7 +239,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section Placeholder */}
+      {/* Skills Section */}
       <section id="skills" className="py-24 px-6 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -247,19 +247,101 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="gradient-text">Skills</span> & Technologies
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Technologies and tools I work with to bring ideas to life.
             </p>
-            <div className="text-muted-foreground">
-              <p>Skills showcase coming soon...</p>
-              <p className="text-sm mt-2">We'll add an interactive skills display here!</p>
-            </div>
           </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Frontend Development */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0 }}
+              className="p-6 rounded-2xl glass hover:shadow-xl transition-all"
+            >
+              <h3 className="text-2xl font-bold mb-4 gradient-text">Frontend Development</h3>
+              <div className="flex flex-wrap gap-2">
+                {['React', 'Flutter (Dart)', 'React Native', 'HTML & CSS', 'Next.js', 'TypeScript'].map((skill, i) => (
+                  <span
+                    key={i}
+                    className="px-4 py-2 rounded-full bg-primary/10 text-foreground border border-primary/20 hover:bg-primary/20 transition-colors text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Backend & Database */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              className="p-6 rounded-2xl glass hover:shadow-xl transition-all"
+            >
+              <h3 className="text-2xl font-bold mb-4 gradient-text">Backend & Database</h3>
+              <div className="flex flex-wrap gap-2">
+                {['SQL', 'Database Design', 'Database Management'].map((skill, i) => (
+                  <span
+                    key={i}
+                    className="px-4 py-2 rounded-full bg-secondary/10 text-foreground border border-secondary/20 hover:bg-secondary/20 transition-colors text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Data & Analysis */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+              className="p-6 rounded-2xl glass hover:shadow-xl transition-all"
+            >
+              <h3 className="text-2xl font-bold mb-4 gradient-accent-text">Data & Analysis</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Excel', 'Orange', 'Tableau', 'Google Analytics', 'Data Mining'].map((skill, i) => (
+                  <span
+                    key={i}
+                    className="px-4 py-2 rounded-full bg-accent/10 text-foreground border border-accent/20 hover:bg-accent/20 transition-colors text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Tools & Workflow */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+              className="p-6 rounded-2xl glass hover:shadow-xl transition-all"
+            >
+              <h3 className="text-2xl font-bold mb-4 gradient-text">Tools & Workflow</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Git & GitHub', 'VS Code', 'Tailwind CSS', 'npm'].map((skill, i) => (
+                  <span
+                    key={i}
+                    className="px-4 py-2 rounded-full bg-primary/10 text-foreground border border-primary/20 hover:bg-primary/20 transition-colors text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
