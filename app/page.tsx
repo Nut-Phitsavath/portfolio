@@ -76,10 +76,10 @@ export default function Home() {
               className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
             >
               Hi, I'm{' '}
-              <span className="gradient-text">Your Name</span>
+              <span className="gradient-text">Nattaphonh Phitsavath</span>
               <br />
               <span className="text-3xl md:text-5xl text-muted-foreground font-normal">
-                Full-Stack Developer
+                Aspiring Software Developer
               </span>
             </motion.h1>
 
@@ -90,8 +90,8 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
             >
-              Building exceptional digital experiences with modern technologies.
-              Passionate about creating scalable, user-friendly applications that solve real-world problems.
+              Building mobile and web applications with React, Flutter, and modern frontend technologies.
+              Experienced in SQL database management and data analysis. Eager to grow through hands-on development.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -125,7 +125,7 @@ export default function Home() {
             >
               <motion.a
                 whileHover={{ scale: 1.2, y: -5 }}
-                href="https://github.com"
+                href="https://github.com/Nut-Phitsavath"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
@@ -135,7 +135,7 @@ export default function Home() {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.2, y: -5 }}
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nattaphonh-phitsavath-68149b353/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
@@ -145,7 +145,7 @@ export default function Home() {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.2, y: -5 }}
-                href="mailto:your.email@example.com"
+                href="mailto:n.phitsavath@gmail.com"
                 className="p-3 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
                 aria-label="Email"
               >
@@ -178,23 +178,23 @@ export default function Home() {
               About <span className="gradient-text">Me</span>
             </h2>
             <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-              I'm a passionate full-stack developer with expertise in building modern web applications.
-              I love transforming ideas into reality through clean code and thoughtful design.
+              Fresh graduate transitioning from business to software development.
+              Eager to contribute to a team and learn from experienced developers.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  title: "💻 Full-Stack Development",
-                  description: "Building end-to-end solutions with React, Next.js, Node.js, and databases"
+                  title: "� Mobile & Web Development",
+                  description: "Building cross-platform apps with Flutter and React/React Native"
                 },
                 {
-                  title: "🎨 UI/UX Design",
-                  description: "Creating beautiful, intuitive interfaces that users love"
+                  title: "💾 Data & Databases",
+                  description: "SQL database management, data mining, and data analysis"
                 },
                 {
-                  title: "🚀 Performance",
-                  description: "Optimizing applications for speed, scalability, and reliability"
+                  title: "🎨 Frontend Development",
+                  description: "Creating responsive interfaces with React, HTML, and CSS"
                 }
               ].map((item, index) => (
                 <motion.div
@@ -290,7 +290,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-border">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Your Name. Built with Next.js & TypeScript.</p>
+          <p>&copy; {new Date().getFullYear()} Nattaphonh Phitsavath. Built with Next.js & TypeScript.</p>
         </div>
       </footer>
     </div>

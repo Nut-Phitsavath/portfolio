@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Full-Stack Developer",
-  description: "Professional portfolio showcasing full-stack development projects, skills, and experience. Specializing in modern web technologies including React, Next.js, and TypeScript.",
-  keywords: ["Full-Stack Developer", "Web Developer", "React", "Next.js", "TypeScript", "Portfolio"],
-  authors: [{ name: "Your Name" }],
+  title: "Nattaphonh Phitsavath | Software Developer Portfolio",
+  description: "Portfolio showcasing mobile and web development projects. Experienced in React, Flutter, React Native, SQL, and data analysis. Aspiring software developer seeking opportunities to grow.",
+  keywords: ["Software Developer", "React", "Flutter", "React Native", "Mobile Developer", "Web Developer", "SQL", "Portfolio", "Nattaphonh Phitsavath"],
+  authors: [{ name: "Nattaphonh Phitsavath" }],
   openGraph: {
-    title: "Portfolio | Full-Stack Developer",
-    description: "Professional portfolio showcasing full-stack development projects and skills",
+    title: "Nattaphonh Phitsavath | Software Developer Portfolio",
+    description: "Mobile and web development portfolio showcasing React, Flutter, and database projects",
     type: "website",
   },
 };
