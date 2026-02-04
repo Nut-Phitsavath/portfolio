@@ -2,10 +2,10 @@
 
 Welcome to my personal portfolio website! This project showcases my skills, projects, and professional background as an aspiring software developer.
 
-## 🚀 Live Demo
+## Live Demo
 [View Live Site](https://nut-phitsavath.github.io/portfolio)
 
-## 🛠 Tech Stack
+## Tech Stack
 
 Built with modern web technologies:
 
@@ -16,7 +16,7 @@ Built with modern web technologies:
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Deployment**: GitHub Pages (via GitHub Actions)
 
-## ✨ Features
+## Features
 
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
 - **Modern UI/UX**: Clean aesthetic withglassmorphism effects and smooth transitions.
@@ -24,7 +24,7 @@ Built with modern web technologies:
 - **Performance**: Static site generation (SSG) for lightning-fast load times.
 - **SEO Optimized**: Metatags and semantic HTML structure.
 
-## 📦 Getting Started
+## Getting Started
 
 To run this project locally:
 
@@ -46,13 +46,13 @@ To run this project locally:
 
 4.  Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🚢 Deployment
+## Deployment
 
 This project is configured to automatically deploy to **GitHub Pages** whenever changes are pushed to the `master` branch.
 
 - Configuration is managed in `next.config.ts` (`output: 'export'`).
 - Workflow defined in `.github/workflows/deploy.yml`.
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
