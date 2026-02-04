@@ -46,7 +46,7 @@ export default function Hero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
                     >
-                        Hi, I'm{' '}
+                        I'm{' '}
                         <span className="gradient-text">Nattaphonh Phitsavath</span>
                         <br />
                         <span className="text-3xl md:text-5xl text-muted-foreground font-normal">
