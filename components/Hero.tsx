@@ -1,29 +1,21 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, ArrowDown, Sparkles } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
+import EyeDoodle from './doodles/EyeDoodle';
 
 export default function Hero() {
     return (
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-            {/* Animated Background Elements */}
+            {/* Surreal accent */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 90, 0],
-                    }}
-                    transition={{ duration: 20, repeat: Infinity }}
-                    className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1.2, 1, 1.2],
-                        rotate: [90, 0, 90],
-                    }}
-                    transition={{ duration: 15, repeat: Infinity }}
-                    className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
-                />
+                    animate={{ rotate: [-3, 3, -3] }}
+                    transition={{ duration: 90, repeat: Infinity, ease: 'easeInOut' }}
+                    className="absolute top-1/3 right-[8%] w-72 text-border opacity-20"
+                >
+                    <EyeDoodle className="w-full h-auto" />
+                </motion.div>
             </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -33,9 +25,8 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+                        className="inline-flex items-center gap-2 px-4 py-2 ink-card mb-8"
                     >
-                        <Sparkles size={16} className="text-primary" />
                         <span className="text-sm text-muted-foreground">Welcome to my portfolio</span>
                     </motion.div>
 
@@ -44,12 +35,11 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+                        className="font-heading text-6xl md:text-8xl mb-6 leading-tight"
                     >
-                        I'm{' '}
-                        <span className="gradient-text">Nattaphonh Phitsavath</span>
+                        I&apos;m Nattaphonh Phitsavath
                         <br />
-                        <span className="text-3xl md:text-5xl text-muted-foreground font-normal">
+                        <span className="text-3xl md:text-5xl text-muted-foreground" style={{ fontFamily: 'var(--font-sans)' }}>
                             Aspiring Software Developer
                         </span>
                     </motion.h1>
@@ -74,14 +64,14 @@ export default function Hero() {
                     >
                         <a
                             href="#projects"
-                            className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-full font-medium hover:bg-primary-dark hover:shadow-glow transform hover:scale-105 inline-flex items-center justify-center gap-2"
+                            className="w-full sm:w-auto px-8 py-4 ink-btn ink-hover items-center justify-center gap-2"
                         >
                             View My Work
                             <ArrowDown size={20} />
                         </a>
                         <a
                             href="#contact"
-                            className="w-full sm:w-auto px-8 py-4 border-2 border-border rounded-full font-medium hover:bg-muted transform hover:scale-105"
+                            className="w-full sm:w-auto px-8 py-4 ink-btn ink-hover items-center justify-center"
                         >
                             Get In Touch
                         </a>
@@ -95,32 +85,32 @@ export default function Hero() {
                         className="flex items-center justify-center gap-6"
                     >
                         <motion.a
-                            whileHover={{ scale: 1.2, y: -5 }}
+                            whileHover={{ y: -3 }}
                             href="https://github.com/Nut-Phitsavath"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
+                            className="p-3 ink-btn ink-hover"
                             aria-label="GitHub"
                         >
-                            <Github size={24} />
+                            <Github size={22} />
                         </motion.a>
                         <motion.a
-                            whileHover={{ scale: 1.2, y: -5 }}
+                            whileHover={{ y: -3 }}
                             href="https://www.linkedin.com/in/nattaphonh-phitsavath-68149b353/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
+                            className="p-3 ink-btn ink-hover"
                             aria-label="LinkedIn"
                         >
-                            <Linkedin size={24} />
+                            <Linkedin size={22} />
                         </motion.a>
                         <motion.a
-                            whileHover={{ scale: 1.2, y: -5 }}
+                            whileHover={{ y: -3 }}
                             href="mailto:n.phitsavath@gmail.com"
-                            className="p-3 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
+                            className="p-3 ink-btn ink-hover"
                             aria-label="Email"
                         >
-                            <Mail size={24} />
+                            <Mail size={22} />
                         </motion.a>
                     </motion.div>
                 </div>
