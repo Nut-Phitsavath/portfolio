@@ -13,15 +13,15 @@ export default function Contact() {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        Get In <span className="gradient-accent-text">Touch</span>
+                    <h2 className="font-heading text-4xl md:text-5xl mb-6">
+                        Get In Touch
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
-                        Have a project in mind or want to collaborate? Let's chat!
+                        Have a project in mind or want to collaborate? Let&apos;s chat!
                     </p>
                     <div className="text-muted-foreground">
                         <p>Contact form coming soon...</p>
-                        <p className="text-sm mt-2">We'll add a functional contact form here!</p>
+                        <p className="text-sm mt-2">We&apos;ll add a functional contact form here!</p>
                     </div>
                 </motion.div>
             </div>
