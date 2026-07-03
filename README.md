@@ -19,8 +19,8 @@ Built with modern web technologies:
 ## Features
 
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
-- **Modern UI/UX**: Clean aesthetic withglassmorphism effects and smooth transitions.
-- **Dark Mode Support**: System-aware color themes (configurable).
+- **Modern UI/UX**: Ink-sketchbook aesthetic with hand-drawn accents and smooth transitions.
+- **Dark Theme**: Single fixed dark theme, no light mode.
 - **Performance**: Static site generation (SSG) for lightning-fast load times.
 - **SEO Optimized**: Metatags and semantic HTML structure.
 
