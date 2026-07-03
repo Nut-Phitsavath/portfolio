@@ -2,49 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design System Variables */
+/* Design System Variables - Ink Sketchbook (single dark theme) */
 :root {
-  /* Colors - Light Mode */
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --border: #e4e4e7;
-
-  /* Accent Colors */
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary: #8b5cf6;
-  --accent: #ec4899;
-
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  --gradient-accent: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
-  --gradient-dark: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
-  --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
-}
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #fafafa;
-    --muted: #27272a;
-    --muted-foreground: #a1a1aa;
-    --border: #27272a;
-
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5);
-    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.5);
-  }
+  --background: #161512;
+  --foreground: #e8e3d3;
+  --muted: #211f1a;
+  --muted-foreground: #9a9484;
+  --border: #3a372e;
+  --ink-accent: #c9c3ad;
 }
 
 /* Base Styles */
@@ -66,6 +31,20 @@ body {
   overflow-x: hidden;
 }
 
+.paper-grain {
+  position: relative;
+}
+
+.paper-grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
 /* Smooth Transitions */
 a,
 button {
@@ -74,8 +53,8 @@ button {
 
 /* Selection */
 ::selection {
-  background-color: var(--primary);
-  color: white;
+  background-color: var(--ink-accent);
+  color: var(--background);
 }
 
 /* Scrollbar Styles */
@@ -93,36 +72,54 @@ button {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: var(--ink-accent);
 }
 
 /* Utility Classes */
-.gradient-text {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.font-heading {
+  font-family: var(--font-heading), cursive;
 }
 
-.gradient-accent-text {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.ink-card {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.ink-btn {
+  display: inline-flex;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  color: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  .glass {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
+.hatch-shadow {
+  position: relative;
+}
+
+.hatch-shadow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--border);
+  border-radius: inherit;
+  transform: translate(4px, 4px);
+  z-index: -1;
+}
+
+.ink-hover {
+  background-image: linear-gradient(var(--ink-accent), var(--ink-accent));
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 0% 1px;
+  transition: background-size 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.ink-hover:hover {
+  background-size: 100% 1px;
+  color: var(--ink-accent);
+  border-color: var(--ink-accent);
 }
 
 /* Animations */
