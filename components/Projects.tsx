@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 export default function Projects() {
     const projects = [
@@ -16,6 +16,20 @@ export default function Projects() {
                 "Sales dashboard with analytics",
                 "Multiple payment methods (cash/card)",
                 "AI product recommendations"
+            ]
+        },
+        {
+            title: "Typing Practice",
+            description: "A Monkeytype-inspired typing trainer with adaptive difficulty — it tracks which words and characters trip you up and weights practice rounds toward your weak spots. Pure HTML/CSS/JS, no framework or build step.",
+            techStack: ["HTML", "CSS", "JavaScript"],
+            liveUrl: "https://nut-phitsavath.github.io/typing-practice/",
+            githubUrl: "https://github.com/Nut-Phitsavath/typing-practice",
+            gradient: "from-emerald-500 to-teal-600",
+            features: [
+                "Five modes: words, timed, and character/hand drills",
+                "Adaptive weighting repeats your weak words and keys",
+                "Live WPM, accuracy, and consistency stats",
+                "On-screen keyboard with finger-position highlighting"
             ]
         }
     ];
@@ -92,11 +106,24 @@ export default function Projects() {
 
                                 {/* Links */}
                                 <div className="flex gap-4">
+                                    {project.liveUrl && (
+                                        <a
+                                            href={project.liveUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
+                                        >
+                                            <ExternalLink size={18} />
+                                            Live Demo
+                                        </a>
+                                    )}
                                     <a
                                         href={project.githubUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
+                                        className={project.liveUrl
+                                            ? "flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors font-medium"
+                                            : "flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"}
                                     >
                                         <Github size={18} />
                                         View Code
