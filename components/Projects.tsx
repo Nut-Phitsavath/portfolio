@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 export default function Projects() {
     const projects = [
@@ -9,8 +9,7 @@ export default function Projects() {
             title: "AI-Powered Smart POS System",
             description: "A POS system for hardware stores. Handles sales, inventory, and customer orders. Integrated AI to recommend products based on items in the cart, and helps analyze sales and recommend actions on the dashboard.",
             techStack: ["Next.js", "TypeScript", "Prisma", "Turso DB", "Tailwind CSS"],
-            liveUrl: "https://ai-integrated-pos-system-production.up.railway.app", // Replace with your actual Railway URL
-            githubUrl: "https://github.com/Nut-Phitsavath/ai-integrated-pos-system", // Replace with your actual GitHub URL
+            githubUrl: "https://github.com/Nut-Phitsavath/ai-integrated-pos-system",
             gradient: "from-blue-500 to-purple-600",
             features: [
                 "Manage inventory and stock levels",
@@ -94,19 +93,10 @@ export default function Projects() {
                                 {/* Links */}
                                 <div className="flex gap-4">
                                     <a
-                                        href={project.liveUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
-                                    >
-                                        <ExternalLink size={18} />
-                                        Live Demo
-                                    </a>
-                                    <a
                                         href={project.githubUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors font-medium"
+                                        className="flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium"
                                     >
                                         <Github size={18} />
                                         View Code
