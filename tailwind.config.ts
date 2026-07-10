@@ -10,11 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         background: "var(--background)",
+        surface: "var(--surface)",
         foreground: "var(--foreground)",
         muted: "var(--muted)",
         "muted-foreground": "var(--muted-foreground)",
         border: "var(--border)",
-        "ink-accent": "var(--ink-accent)",
+        accent: "var(--accent)",
+        "accent-soft": "var(--accent-soft-bg)",
+        "accent-soft-foreground": "var(--accent-soft-text)",
+      },
+      fontFamily: {
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
     },
   },

@@ -1,64 +1,51 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/i18n';
+
+const skillLists = [
+    ['React', 'Flutter (Dart)', 'React Native', 'HTML & CSS', 'Next.js', 'TypeScript'],
+    ['Python', 'FastAPI', 'SQL', 'Database design', 'Docker'],
+    ['Excel', 'Tableau', 'Google Analytics'],
+    ['Git & GitHub', 'Tailwind CSS', 'Figma'],
+];
 
 export default function Skills() {
-    const skillCategories = [
-        {
-            title: "Frontend Development",
-            skills: ['React', 'Flutter (Dart)', 'React Native', 'HTML & CSS', 'Next.js', 'TypeScript', 'Python']
-        },
-        {
-            title: "Backend & Database",
-            skills: ['SQL', 'Database Design', 'Database Management']
-        },
-        {
-            title: "Data & Analysis",
-            skills: ['Excel', 'Orange', 'Tableau', 'Google Analytics']
-        },
-        {
-            title: "Tools & Workflow",
-            skills: ['Git & GitHub', 'VS Code', 'Antigravity', 'Tailwind CSS', 'npm', 'Figma']
-        }
-    ];
+    const { t } = useLanguage();
+    const skillCategories = t.skills.categories.map((cat, i) => ({ ...cat, skills: skillLists[i] }));
 
     return (
-        <section id="skills" className="py-24 px-6 bg-muted/30">
+        <section id="skills" className="py-24 md:py-32 px-6">
             <div className="max-w-6xl mx-auto">
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
+                    className="mb-12 max-w-2xl"
                 >
-                    <h2 className="font-heading text-4xl md:text-5xl mb-6">
-                        Skills & Technologies
+                    <p className="font-mono text-sm uppercase tracking-widest text-accent mb-4">{t.skills.eyebrow}</p>
+                    <h2 className="font-serif italic text-4xl md:text-5xl">
+                        {t.skills.heading}
                     </h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Technologies and tools I work with to bring ideas to life.
-                    </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {skillCategories.map((category, categoryIndex) => (
                         <motion.div
-                            key={categoryIndex}
+                            key={category.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.3, delay: categoryIndex * 0.1 }}
-                            className="p-6 ink-card hatch-shadow"
+                            transition={{ duration: 0.4, delay: categoryIndex * 0.08 }}
+                            className="card p-6"
                         >
-                            <h3 className="font-heading text-2xl mb-4">
+                            <h3 className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-4">
                                 {category.title}
                             </h3>
                             <div className="flex flex-wrap gap-2">
-                                {category.skills.map((skill, skillIndex) => (
-                                    <span
-                                        key={skillIndex}
-                                        className="px-4 py-2 ink-btn text-sm"
-                                    >
+                                {category.skills.map((skill) => (
+                                    <span key={skill} className="tag px-3 py-1.5 text-sm">
                                         {skill}
                                     </span>
                                 ))}

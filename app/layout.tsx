@@ -1,31 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Caveat } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { LanguageProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
-const caveat = Caveat({
-  variable: "--font-heading",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Nattaphonh Phitsavath | Software Developer Portfolio",
-  description: "Portfolio showcasing mobile and web development projects. Experienced in React, Flutter, React Native, SQL, and data analysis. Aspiring software developer seeking opportunities to grow.",
+  title: "Nattaphonh Phitsavath | Software Developer",
+  description: "Portfolio of Nattaphonh Phitsavath, a junior software developer building mobile and web applications with React, Flutter, and SQL-backed systems.",
   keywords: ["Software Developer", "React", "Flutter", "React Native", "Mobile Developer", "Web Developer", "SQL", "Portfolio", "Nattaphonh Phitsavath"],
   authors: [{ name: "Nattaphonh Phitsavath" }],
   openGraph: {
-    title: "Nattaphonh Phitsavath | Software Developer Portfolio",
-    description: "Mobile and web development portfolio showcasing React, Flutter, and database projects",
+    title: "Nattaphonh Phitsavath | Software Developer",
+    description: "Portfolio of Nattaphonh Phitsavath, a junior software developer building mobile and web applications with React, Flutter, and SQL-backed systems.",
     type: "website",
   },
 };
@@ -36,11 +38,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} antialiased paper-grain`}
+        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
       >
-        {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
+          }}
+        />
+        <div className="ambient-glow" />
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );
